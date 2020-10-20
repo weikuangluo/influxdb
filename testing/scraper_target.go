@@ -435,31 +435,6 @@ func ListTargets(
 			},
 		},
 		{
-			name: "filter targets by orgID not exist",
-			fields: TargetFields{
-				Organizations: []*influxdb.Organization{
-					&org2,
-				},
-				Targets: []*influxdb.ScraperTarget{
-					&target1,
-					&target2,
-					&target3,
-				},
-			},
-			args: args{
-				filter: influxdb.ScraperTargetFilter{
-					OrgID: idPtr(idOne),
-				},
-			},
-			wants: wants{
-				targets: []influxdb.ScraperTarget{},
-				err: &influxdb.Error{
-					Code: influxdb.ENotFound,
-					Msg:  "organization not found",
-				},
-			},
-		},
-		{
 			name: "filter targets by org name",
 			fields: TargetFields{
 				Organizations: []*influxdb.Organization{
