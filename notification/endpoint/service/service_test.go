@@ -56,7 +56,7 @@ func newSecretService(t *testing.T, ctx context.Context, logger *zap.Logger, s k
 
 // TestEndpointService_cumulativeSecrets tests that secrets are cumulatively added/updated and removed upon delete
 // see https://github.com/influxdata/influxdb/pull/19082 for details
-func TestEndpointService_cummulativeSecrets(t *testing.T) {
+func TestEndpointService_cumulativeSecrets(t *testing.T) {
 	ctx := context.Background()
 	store := inmem.NewKVStore()
 	logger := zaptest.NewLogger(t)
